@@ -3,3 +3,7 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/db/*.sqlite3
+# Игнорировать все .txt файлы в каталоге doc/ на всех уровнях вложенности
+doc/**/*.txt
+node_modules
