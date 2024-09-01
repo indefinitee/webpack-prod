@@ -1,46 +1,43 @@
-import path from 'path';
 import webpack from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import {BuildOptions} from './types/config';
-import {resolvePath} from 'react-router-dom';
+import { resolvePath } from 'react-router-dom';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-
-    const {isDev} = options;
+    const { isDev } = options;
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
             name: '[path][name].[ext]',
-        }
-    }
+        },
+    };
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                "plugins": [
+                plugins: [
                     [
-                        "i18next-extract",
+                        'i18next-extract',
                         {
-                            "locales": ["ru", "en"],
-                            "keyAsDefaultValue": true
-                        }
-                    ]
-                ]
-            }
-        }
-    }
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true,
+                        },
+                    ],
+                ],
+            },
+        },
+    };
 
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
-    }
+    };
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,
@@ -53,20 +50,20 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                         auto: (resolvePath: string) => Boolean(resolvePath.includes('.module.')),
                         localIdentName: isDev
                             ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]'
+                            : '[hash:base64:8]',
                     },
-                }
+                },
             },
-            "sass-loader",
-        ]
-    }
+            'sass-loader',
+        ],
+    };
 
     // Без тайпскрипта использовать babel
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    }
+    };
 
-    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader]
+    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader];
 }

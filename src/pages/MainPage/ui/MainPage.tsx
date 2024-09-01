@@ -1,15 +1,15 @@
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 type Props = {}
 
 const MainPage = (props: Props) => {
-  const { t } = useTranslation('main');
+    const { t } = useTranslation('main');
 
-  return (
-    <div>
-      {t('Главная')}
-    </div>
-  )
-}
+    return (
+        <div>
+            {t('Главная')}
+        </div>
+    );
+};
 
 export default MainPage;
