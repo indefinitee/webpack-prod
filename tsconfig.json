@@ -18,5 +18,10 @@
       "compilerOptions": {
         "module": "CommonJS"
       }
-    }
+    },
+  "types": ["jest","@testing-library/jest-dom"],
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/**.*",
+  ],
   }
