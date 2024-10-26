@@ -4,7 +4,7 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import cls from './Sidebar.module.scss';
 
-interface SidebarProps {
+export interface SidebarProps {
     className?: string;
 }
 
