@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import {ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef} from 'react';
+import {
+    ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef,
+} from 'react';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
@@ -24,11 +26,10 @@ export const Input = memo((props: InputProps) => {
     const inputRef = useRef<HTMLInputElement>();
 
     useEffect(() => {
-       if (autofocus) {
-           inputRef.current?.focus();
-           console.log(autofocus);
-       }
-    }, [])
+        if (autofocus) {
+            inputRef.current?.focus();
+        }
+    }, [autofocus]);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);

@@ -49,6 +49,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'jsx-a11y/label-has-associated-control': 'off',
+        'jsx-a11y/no-autofocus': 'off',
     },
     globals: {
         __IS_DEV__: true,
