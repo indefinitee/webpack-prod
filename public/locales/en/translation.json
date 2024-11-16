@@ -1,8 +1,10 @@
 {
   "Войти": "Sign In",
+  "Выйти": "Log Out",
   "Главная": "Main page",
   "Короткий язык": "En",
   "Логин": "Login",
+  "Неверный логин или пароль": "Incorrect login or password",
   "О сайте": "About page",
   "Обновить страницу": "Refresh page",
   "Пароль": "Password",
@@ -11,5 +13,6 @@
   "Привет друг": "Hello friend!",
   "Произошла ошибка": "Something went wrong",
   "Страница не найдена": "Page not found",
+  "Форма авторизации": "Authentication Form",
   "Язык": "English"
 }

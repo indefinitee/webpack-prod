@@ -1,5 +1,6 @@
 const jsonServer = require('json-server');
 const path = require('path');
+const { readFileSync } = require('node:fs');
 
 const server = jsonServer.create();
 
@@ -8,7 +9,6 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
-server.use(router);
 
 server.get('/echo', (req, res) => {
     res.jsonp(req.query);
@@ -24,16 +24,16 @@ server.use(async (req, res, next) => {
 });
 
 server.use((req, res, next) => {
-    if (!req.headers.authorization) {
-        return res.status(403).json({ message: 'AUTH ERROR' });
-    }
+    // if (!req.headers.authorization) {
+    //     return res.status(403).json({ message: 'AUTH ERROR' });
+    // }
 
     next();
 });
 
 server.post('/login', (req, res) => {
     const { username, password } = req.body;
-    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+    const db = JSON.parse(readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
     const { users = [] } = db;
 
     const userFromBd = users.find((u) => u.username === username && u.password === password);
@@ -45,6 +45,7 @@ server.post('/login', (req, res) => {
     return res.status(403).json({ message: 'AUTH ERROR' });
 });
 
+server.use(router);
 server.listen(8000, () => {
     console.log('JSON Server is running');
 });

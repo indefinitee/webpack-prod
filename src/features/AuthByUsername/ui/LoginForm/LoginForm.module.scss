@@ -1,14 +1,15 @@
 .LoginForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 20vw;
 }
 
 .label {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .inputBtn {
-  align-self: end;
+    align-self: end;
 }

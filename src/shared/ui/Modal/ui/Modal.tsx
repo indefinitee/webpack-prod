@@ -28,7 +28,7 @@ export const Modal = (props: ModalProps) => {
         if (isOpen) {
             setIsMounted(true);
         }
-    }, [isOpen])
+    }, [isOpen]);
 
     const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();

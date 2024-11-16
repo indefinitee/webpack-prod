@@ -92,3 +92,12 @@ export const SquareSizeXL: Story = {
         size: ButtonSize.XL,
     },
 };
+
+export const BtnDisabled: Story = {
+    args: {
+        children: 'disabled',
+        square: true,
+        size: ButtonSize.XL,
+        disabled: true,
+    },
+};
