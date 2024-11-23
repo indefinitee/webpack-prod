@@ -22,6 +22,8 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
         [cls.collapsed]: collapsed,
     };
 
+    if (!item) return null;
+
     return (
         <AppLink
             theme={AppLinkTheme.SECONDARY}

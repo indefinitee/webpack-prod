@@ -50,9 +50,11 @@ module.exports = {
         'no-param-reassign': 'off',
         'jsx-a11y/label-has-associated-control': 'off',
         'jsx-a11y/no-autofocus': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {
