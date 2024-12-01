@@ -1,19 +1,44 @@
 .ProfileCard {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
 }
 
-.header {
-    display: flex;
-    gap: 20px;
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
 }
 
 .data {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input {
+  width: 100%
+}
+
+.avatarWrapper {
+  text-align: center;
+}
+
+.editing {
+  border-color: var(--secondary-color);
 }

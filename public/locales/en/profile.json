@@ -1,6 +1,13 @@
 {
+  "Возраст": "Age",
+  "Город": "City",
   "Имя": "Lastname",
+  "Имя пользователя": "Username",
+  "Отменить": "Cancel",
+  "Попробуйте обновить страницу": "Try reload page",
+  "Произошла ошибка при загрузке": "Something went wrong",
   "Профиль": "Profile",
   "Редактировать": "Edit",
+  "Ссылка на аватар": "Link to your image",
   "Фамилия": "Firstname"
 }

@@ -5,14 +5,17 @@
   "Короткий язык": "En",
   "Логин": "Login",
   "Неверный логин или пароль": "Incorrect login or password",
-  "О сайте": "About page",
+  "О сайте": "About page",
   "Обновить страницу": "Refresh page",
   "Пароль": "Password",
   "Перевод": "Translate!",
   "Переключить": "Toggle",
   "Привет друг": "Hello friend!",
   "Произошла ошибка": "Something went wrong",
+  "Профиль": "Profile",
   "Страница не найдена": "Page not found",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Specify country",
   "Форма авторизации": "Authentication Form",
   "Язык": "English"
 }
