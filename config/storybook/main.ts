@@ -18,7 +18,7 @@ const config: StorybookConfig = {
         options: {},
     },
     webpackFinal: async (config, { configType }) => {
-        config.resolve.plugins = [new TsConfigPathsPlugin()];
+        config!.resolve!.plugins = [new TsConfigPathsPlugin()];
         return config;
     },
     swc: () => ({

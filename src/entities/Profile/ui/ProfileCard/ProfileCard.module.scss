@@ -1,44 +1,44 @@
 .ProfileCard {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  border: 2px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
 }
 
 .loading,
 .error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
 }
 
 .data {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .inputWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
-  max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .input {
-  width: 100%
+    width: 100%;
 }
 
 .avatarWrapper {
-  text-align: center;
+    text-align: center;
 }
 
 .editing {
-  border-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
