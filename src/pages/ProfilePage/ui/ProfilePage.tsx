@@ -7,11 +7,9 @@ import {
     ProfileCard,
     getProfileIsLoading,
     getProfileError,
-    getProfileData,
     getProfileReadOnly,
     getProfileForm,
     profileActions,
-    Profile,
     getProfileValidateErrors,
     ValidateProfileError,
 } from 'entities/Profile';
@@ -34,7 +32,6 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
-
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const formData = useSelector(getProfileForm);
