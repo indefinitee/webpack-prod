@@ -7,6 +7,7 @@ const initialState: UserSchema = {
         id: '',
         username: '',
     },
+    _mounted: false,
 };
 
 export const userSlice = createSlice({
@@ -20,6 +21,7 @@ export const userSlice = createSlice({
             const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
             if (user) {
+                state._mounted = true;
                 state.authData = JSON.parse(user);
             } else {
                 state.authData = undefined;
