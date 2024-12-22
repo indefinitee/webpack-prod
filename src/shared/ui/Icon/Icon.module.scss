@@ -1,0 +1,11 @@
+.Icon {
+    &:has(path) {
+        path {
+            fill: var(--primary-color);
+        }
+    }
+
+    &:not(:has(path)) {
+        fill: var(--primary-color);
+    }
+}
