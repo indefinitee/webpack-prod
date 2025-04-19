@@ -26,11 +26,12 @@ export const fetchCommentsByArticleId = createAsyncThunk<
                 },
             });
 
-            if (!response.data) return rejectWithValue('error');
+            if (!response.data) {
+                return rejectWithValue('error');
+            }
 
             return response.data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue(('error'));
         }
     },
