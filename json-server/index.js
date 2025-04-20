@@ -39,7 +39,7 @@ server.post('/login', (req, res) => {
     const userFromBd = users.find((u) => u.username === username && u.password === password);
 
     if (userFromBd) {
-        return res.json({ userFromBd });
+        return res.json(userFromBd);
     }
 
     return res.status(403).json({ message: 'AUTH ERROR' });

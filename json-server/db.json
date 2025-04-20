@@ -167,9 +167,14 @@
       "articleId": "1",
       "text": "привет",
       "id": "wxUM0-x"
+    },
+    {
+      "articleId": "1",
+      "text": "ку",
+      "id": "bB0F0DI"
     }
   ],
-  "user": [
+  "users": [
     {
       "id": "1",
       "username": "admin",
