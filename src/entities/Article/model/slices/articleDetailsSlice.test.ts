@@ -9,6 +9,11 @@ const data: Article = {
     subtitle: 'Здесь произошло что-то',
     img: 'some image',
     views: 100,
+    user: {
+        id: '1',
+        username: 'User',
+        avatar: 'some avatar',
+    },
     createdAt: '22.02.2024',
     type: [ArticleType.IT],
     blocks: [{

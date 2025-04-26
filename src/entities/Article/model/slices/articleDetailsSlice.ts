@@ -10,6 +10,11 @@ const initialState: ArticleDetailsSchema = {
         subtitle: '',
         img: '',
         views: 0,
+        user: {
+            id: '',
+            username: '',
+            avatar: '',
+        },
         createdAt: '',
         type: [],
         blocks: [],
