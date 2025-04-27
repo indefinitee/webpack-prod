@@ -66,8 +66,6 @@ const fullArticle = {
     view: ArticleView.FULL,
 };
 
-const darkDecorator = [(Story) => ThemeDecorator(Theme.DARK)(Story)];
-
 export const Light: Story = {
     args: briefArticle,
 };
@@ -78,10 +76,11 @@ export const LightFull: Story = {
 
 export const Dark: Story = {
     args: briefArticle,
-    decorators: darkDecorator,
 };
 
 export const DarkFull: Story = {
     args: fullArticle,
-    decorators: darkDecorator,
 };
+
+Dark.decorators = [(Story) => ThemeDecorator(Theme.DARK)(Story)];
+DarkFull.decorators = [(Story) => ThemeDecorator(Theme.DARK)(Story)];
