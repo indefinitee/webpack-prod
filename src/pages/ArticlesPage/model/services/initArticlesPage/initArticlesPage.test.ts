@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { fetchNextArticlesPage } from './fetchNextArticlesPage';
+import { initArticlesPage } from './initArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
@@ -18,38 +18,24 @@ const state: Partial<StateSchema> = {
 };
 
 describe(
-    'fetchNextArticlesPage.test',
+    'initArticlesPage.test',
     () => {
-        test('success fetch', async () => {
-            const thunk = new TestAsyncThunk(fetchNextArticlesPage, state);
+        test('should be called when inited false', async () => {
+            const thunk = new TestAsyncThunk(initArticlesPage, state);
 
             await thunk.callThunk();
 
             expect(thunk.dispatch).toBeCalledTimes(4);
-            expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+            expect(fetchArticlesList).toHaveBeenCalled();
         });
 
-        test('fetchArticlesList not called', async () => {
+        test('should not be called when inited true', async () => {
             const { articlesPage } = state;
-            const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+            const thunk = new TestAsyncThunk(initArticlesPage, {
+                ...state,
                 articlesPage: {
                     ...articlesPage,
-                    hasMore: false,
-                },
-            });
-
-            await thunk.callThunk();
-
-            expect(thunk.dispatch).toBeCalledTimes(2);
-            expect(fetchArticlesList).not.toHaveBeenCalled();
-        });
-
-        test('fetchArticlesList not called', async () => {
-            const { articlesPage } = state;
-            const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-                articlesPage: {
-                    ...articlesPage,
-                    isLoading: true,
+                    _inited: true,
                 },
             });
 
