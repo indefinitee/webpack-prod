@@ -1,5 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
@@ -11,8 +12,11 @@ const state: Partial<StateSchema> = {
         hasMore: true,
         isLoading: false,
         ids: [],
+        sort: ArticleSortField.CREATED,
+        search: '',
         entities: {},
         limit: 5,
+        type: ArticleType.ALL,
         _inited: false,
     },
 };
