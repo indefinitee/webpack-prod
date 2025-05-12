@@ -11,7 +11,7 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
 server.get('/echo', (req, res) => {
-    res.jsonp(req.query);
+    res.json(req.query);
 });
 
 server.use(jsonServer.bodyParser);
