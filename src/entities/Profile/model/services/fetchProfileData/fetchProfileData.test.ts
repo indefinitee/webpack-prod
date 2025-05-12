@@ -1,5 +1,4 @@
 import { fetchProfileData } from 'entities/Profile';
-import { profileActions } from 'entities/profile';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
