@@ -3,13 +3,13 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import {
-    ArticleDetailsRecommendationsSchema,
-} from 'pages/ArticleDetailsPage/model/types/articleDetailsRecommendationsSchema';
 import { Article } from 'entities/Article';
 import {
+    ArticleDetailsRecommendationsSchema,
+} from '../types/articleDetailsRecommendationsSchema';
+import {
     fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+} from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
