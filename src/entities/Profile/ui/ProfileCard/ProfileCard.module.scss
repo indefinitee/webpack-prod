@@ -1,25 +1,11 @@
 .ProfileCard {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     padding: 20px;
     border: 2px solid var(--primary-color);
 }
 
 .loading,
 .error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 350px;
-}
-
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 400px;
 }
 
 .inputWrapper {
@@ -28,7 +14,6 @@
     align-items: flex-start;
     gap: 10px;
     width: 100%;
-    max-width: 400px;
 }
 
 .input {

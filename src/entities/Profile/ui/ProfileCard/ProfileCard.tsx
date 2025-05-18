@@ -7,6 +7,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -47,21 +48,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке')}
                     text={t('Попробуйте обновить страницу')}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -70,104 +71,102 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.data}>
-                {
-                    data?.avatar
+        <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+            {
+                data?.avatar
                     && (
-                        <div className={cls.avatarWrapper}>
+                        <HStack justify="center" max className={cls.avatarWrapper}>
                             <Avatar
                                 src={data?.avatar}
                                 alt="Аватар"
                             />
-                        </div>
+                        </HStack>
                     )
-                }
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Имя')}
-                    />
-                    <Input
-                        value={data?.lastname}
-                        placeholder={t('Имя')}
-                        className={cls.input}
-                        onChange={onChangeLastName}
-                        readonly={readonly}
-                    />
-                </label>
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Фамилия')}
-                    />
-                    <Input
-                        value={data?.firstname}
-                        placeholder={t('Фамилия')}
-                        className={cls.input}
-                        onChange={onChangeFirstName}
-                        readonly={readonly}
-                    />
-                </label>
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Возраст')}
-                    />
-                    <Input
-                        value={data?.age}
-                        placeholder={t('Возраст')}
-                        className={cls.input}
-                        onChange={onChangeAge}
-                        readonly={readonly}
-                    />
-                </label>
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Город')}
-                    />
-                    <Input
-                        value={data?.city}
-                        placeholder={t('Город')}
-                        className={cls.input}
-                        onChange={onChangeCity}
-                        readonly={readonly}
-                    />
-                </label>
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Имя пользователя')}
-                    />
-                    <Input
-                        value={data?.username}
-                        placeholder={t('Имя пользователя')}
-                        className={cls.input}
-                        onChange={onChangeUsername}
-                        readonly={readonly}
-                    />
-                </label>
-                <label className={cls.inputWrapper}>
-                    <Text
-                        text={t('Ссылка на аватар')}
-                    />
-                    <Input
-                        value={data?.avatar}
-                        placeholder={t('Ссылка на аватар')}
-                        className={cls.input}
-                        onChange={onChangeAvatar}
-                        readonly={readonly}
-                    />
-                </label>
-                <CurrencySelect
+            }
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Имя')}
+                />
+                <Input
+                    value={data?.lastname}
+                    placeholder={t('Имя')}
                     className={cls.input}
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
+                    onChange={onChangeLastName}
                     readonly={readonly}
                 />
-                <CountrySelect
+            </label>
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Фамилия')}
+                />
+                <Input
+                    value={data?.firstname}
+                    placeholder={t('Фамилия')}
                     className={cls.input}
-                    value={data?.country}
-                    onChange={onChangeCountry}
+                    onChange={onChangeFirstName}
                     readonly={readonly}
                 />
-            </div>
-        </div>
+            </label>
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Возраст')}
+                />
+                <Input
+                    value={data?.age}
+                    placeholder={t('Возраст')}
+                    className={cls.input}
+                    onChange={onChangeAge}
+                    readonly={readonly}
+                />
+            </label>
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Город')}
+                />
+                <Input
+                    value={data?.city}
+                    placeholder={t('Город')}
+                    className={cls.input}
+                    onChange={onChangeCity}
+                    readonly={readonly}
+                />
+            </label>
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Имя пользователя')}
+                />
+                <Input
+                    value={data?.username}
+                    placeholder={t('Имя пользователя')}
+                    className={cls.input}
+                    onChange={onChangeUsername}
+                    readonly={readonly}
+                />
+            </label>
+            <label className={cls.inputWrapper}>
+                <Text
+                    text={t('Ссылка на аватар')}
+                />
+                <Input
+                    value={data?.avatar}
+                    placeholder={t('Ссылка на аватар')}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
+                    readonly={readonly}
+                />
+            </label>
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readonly}
+            />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
+        </VStack>
     );
 };
