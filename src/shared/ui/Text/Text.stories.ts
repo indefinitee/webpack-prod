@@ -88,3 +88,13 @@ export const SizeL: Story = {
     },
     decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
 };
+
+export const SizeS: Story = {
+    args: {
+        title: 'Пример заголовка',
+        text: 'Пример текста',
+        theme: TextTheme.PRIMARY,
+        size: TextSize.S,
+    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+};
