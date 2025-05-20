@@ -1,0 +1,53 @@
+.Dropdown {
+  position: relative;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  background: var(--card-bg-color);
+  position: absolute;
+  z-index: 10000;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  flex-direction: column;
+  display: flex;
+
+  &TopLeft {
+    bottom: 100%;
+    right: 0;
+  }
+
+  &TopRight {
+    bottom: 100%;
+    left: 0;
+  }
+
+  &BottomLeft {
+    top: 100%;
+    right: 0;
+  }
+
+  &BottomRight {
+    top: 100%;
+    left: 0;
+  }
+}
+
+.item {
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--primary-color);
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--card-bg-color);
+  }
+}

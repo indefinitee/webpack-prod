@@ -11,17 +11,30 @@
 
 .options {
   background: var(--listbox-bg);
-  position: relative;
+  position: absolute;
   z-index: 10000;
   border-radius: 12px;
   box-shadow: 4px 4px 8px var(--listbox-bg);
+  width: 100%;
 
-  &Top {
+  &TopLeft {
     bottom: 100%;
+    right: 0;
   }
 
-  &Bottom {
+  &TopRight {
+    bottom: 100%;
+    left: 0;
+  }
+
+  &BottomLeft {
     top: 100%;
+    right: 0;
+  }
+
+  &BottomRight {
+    top: 100%;
+    left: 0;
   }
 }
 

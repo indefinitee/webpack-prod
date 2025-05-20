@@ -9,7 +9,41 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ListBoxPrimary: Story = {
+const items = [
+    { content: 'test111', value: 'testset111' },
+    { content: 'test222', value: 'testset222' },
+];
+
+const value = 'testset222';
+
+export const topLeft: Story = {
     args: {
+        items,
+        value,
+        direction: 'top left',
+    },
+};
+
+export const topRight: Story = {
+    args: {
+        items,
+        value,
+        direction: 'top right',
+    },
+};
+
+export const bottomLeft: Story = {
+    args: {
+        items,
+        value,
+        direction: 'bottom left',
+    },
+};
+
+export const bottomRight: Story = {
+    args: {
+        items,
+        value,
+        direction: 'bottom right',
     },
 };
