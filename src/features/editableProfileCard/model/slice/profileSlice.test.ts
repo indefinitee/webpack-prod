@@ -1,6 +1,6 @@
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileReducer, profileActions } from './profileSlice';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
 
 const data = {
     firstname: 'John',
