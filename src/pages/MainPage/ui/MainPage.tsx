@@ -11,7 +11,6 @@ const MainPage = (props: Props) => {
     return (
         <Page>
             {t('Главная')}
-            <div>test</div>
             <HStack>
                 <ListBox
                     defaultValue="choose value"

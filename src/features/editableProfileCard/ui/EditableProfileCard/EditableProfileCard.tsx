@@ -11,7 +11,6 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
-import cls from './EditableProfileCard.module.scss';
 import {
     getProfileIsLoading,
 } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -93,7 +92,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap="8" max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack gap="8" max className={classNames('', {}, [className])}>
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
                         theme={TextTheme.ERROR}
