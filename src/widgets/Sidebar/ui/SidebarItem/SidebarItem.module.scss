@@ -1,12 +1,16 @@
 .item {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
 }
 
 .link {
     opacity: 1;
     transition: opacity 0.3s;
     white-space: nowrap;
+    min-width: 70px;
 }
 
 .icon {
@@ -18,5 +22,6 @@
         opacity: 0;
         transition: opacity 0.3s;
         width: 0;
+        min-width: auto;
     }
 }

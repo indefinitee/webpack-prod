@@ -10,6 +10,7 @@ import { ProfileCard } from 'entities/Profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import {
     getProfileIsLoading,
@@ -25,7 +26,7 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 
 interface EditableProfileCardProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 const reducers: ReducersList = {
@@ -93,11 +94,13 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack gap="8" max className={classNames('', {}, [className])}>
+                <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
                         theme={TextTheme.ERROR}
                         text={t(validateErrorTranslates[err])}
                         key={err}
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard

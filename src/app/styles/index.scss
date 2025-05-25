@@ -24,11 +24,11 @@ body {
     height: 8px;
 }
 
-
 ::-webkit-scrollbar-track {
     background: var(--bg-color);
     border-radius: 8px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 8px;

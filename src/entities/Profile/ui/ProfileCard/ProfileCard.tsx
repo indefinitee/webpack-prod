@@ -25,6 +25,8 @@ interface ProfileCardProps {
     onChangeAvatar?: (value: string) => void;
     onChangeCurrency?: (value: Currency) => void,
     onChangeCountry?: (value: Country) => void,
+
+    'data-testid'?: string
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -42,6 +44,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
         isLoading = false,
+        'data-testid': dataTestId = '',
     } = props;
 
     const { t } = useTranslation('profile');
@@ -93,6 +96,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeLastName}
                     readonly={readonly}
+                    data-testid="ProfileCard.firstname"
                 />
             </label>
             <label className={cls.inputWrapper}>
@@ -105,6 +109,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeFirstName}
                     readonly={readonly}
+                    data-testid="ProfileCard.lastname"
                 />
             </label>
             <label className={cls.inputWrapper}>
@@ -117,6 +122,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAge}
                     readonly={readonly}
+                    data-testid="ProfileCard.age"
                 />
             </label>
             <label className={cls.inputWrapper}>
@@ -129,6 +135,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeCity}
                     readonly={readonly}
+                    data-testid="ProfileCard.city"
                 />
             </label>
             <label className={cls.inputWrapper}>
@@ -141,6 +148,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeUsername}
                     readonly={readonly}
+                    data-testid="ProfileCard.username"
                 />
             </label>
             <label className={cls.inputWrapper}>
@@ -153,6 +161,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readonly={readonly}
+                    data-testid="ProfileCard.avatar"
                 />
             </label>
             <CurrencySelect

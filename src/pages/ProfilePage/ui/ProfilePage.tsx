@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page/Page';
 import { VStack } from 'shared/ui/Stack/VStack/VStack';
-import { EditableProfileCard, EditableProfileCardHeader } from 'features/editableProfileCard';
+import { EditableProfileCard } from 'features/editableProfileCard';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface ProfilePageProps {
@@ -21,7 +21,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <Page className={classNames('', {}, [className])}>
             <VStack max gap="16">
-                <EditableProfileCardHeader />
                 <EditableProfileCard id={id} />
             </VStack>
         </Page>

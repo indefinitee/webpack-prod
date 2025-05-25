@@ -1,12 +1,13 @@
 .Page {
-  flex-grow: 1;
-  padding: 10px 20px;
-  height: calc(100vh - var(--navbar-height));
-  overflow-y: auto;
-  flex-shrink: 100;
+    flex-grow: 1;
+    padding: 10px 20px;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    flex-shrink: 100;
+    scrollbar-gutter: stable;
 }
 
 .trigger {
-  height: 20px;
-  margin: 10px;
+    height: 20px;
+    margin: 10px;
 }
