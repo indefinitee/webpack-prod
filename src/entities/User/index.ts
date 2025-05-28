@@ -18,7 +18,7 @@ export {
 } from './model/selectors/roleSelectors';
 
 export {
-    UserSchema,
-    User,
+    type UserSchema,
+    type User,
     UserRole,
 } from './model/types/user';

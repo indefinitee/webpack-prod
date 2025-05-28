@@ -3,7 +3,7 @@ export {
 } from './ui/ArticleDetails/ArticleDetails';
 
 export {
-    Article,
+    type Article,
     ArticleView,
     ArticleSortField,
     ArticleType,
