@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
 
-type Props = {}
+type AboutPageProps = {}
 
-const AboutPage: React.FC = (props: Props) => {
+const AboutPage: React.FC = (props: AboutPageProps) => {
     const { t } = useTranslation('about');
 
     return (

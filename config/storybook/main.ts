@@ -1,5 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
-
+import { StorybookConfig } from '@storybook/react-webpack5';
 import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const config: StorybookConfig = {

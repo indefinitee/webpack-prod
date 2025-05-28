@@ -5,9 +5,10 @@ import { CommentList } from 'entities/Comment';
 import { useTranslation } from 'react-i18next';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
+import { Loader } from 'shared/ui/Loader/Loader';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -17,7 +18,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
@@ -40,7 +41,9 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
             <Text
                 title={t('Комментарии')}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 comments={comments}
                 isLoading={commentsIsLoading}

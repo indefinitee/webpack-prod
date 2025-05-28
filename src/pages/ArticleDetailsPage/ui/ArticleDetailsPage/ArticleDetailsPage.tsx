@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -20,16 +19,7 @@ const reducersList: ReducersList = {
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-
-    if (!id) {
-        return (
-            <div className={classNames('', {}, [className])}>
-                {t('Статья не найдена')}
-            </div>
-        );
-    }
 
     return (
         <DynamicModuleLoader reducers={reducersList} removeAfterUnmount>

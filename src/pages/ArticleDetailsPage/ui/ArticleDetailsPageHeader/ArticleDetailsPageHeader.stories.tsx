@@ -5,6 +5,9 @@ import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 const meta = {
     title: 'pages/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
+    decorators: [
+        (Story) => StoreDecorator({})((Story)),
+    ],
 } satisfies Meta<typeof ArticleDetailsPageHeader>;
 
 export default meta;
