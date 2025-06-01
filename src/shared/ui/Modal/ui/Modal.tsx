@@ -1,7 +1,6 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import {
-    ReactNode, useEffect, useCallback, useState,
-} from 'react';
+import { ReactNode } from 'react';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../../Overlay/Overlay';
 import { Portal } from '../../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -23,35 +22,13 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) onClose();
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        const { key } = e;
-
-        if (key === 'Escape') {
-            onClose?.();
-        }
-    }, [onClose]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
+    const {
+        close,
+        isMounted,
+    } = useModal({
+        isOpen,
+        onClose,
+    });
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -64,7 +41,7 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div className={cls.content}>
                     {children}
                 </div>
