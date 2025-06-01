@@ -27,7 +27,7 @@ export function useModal({
         if (key === 'Escape') {
             close();
         }
-    }, []);
+    }, [close]);
 
     useEffect(() => {
         if (isOpen) {
