@@ -21,7 +21,7 @@
         "module": "CommonJS"
       }
     },
-  "types": ["jest","@testing-library/jest-dom"],
+  "types": ["jest","@testing-library/jest-dom", "vite/client", "vite-plugin-svgr/client"],
   "include": [
     "./config/jest/setupTests.ts",
     "./src/**/**.*"
