@@ -773,6 +773,12 @@
       "userId": "1",
       "text": "test123",
       "id": "J-5_rYF"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "ну привет",
+      "id": "7gpf4G4"
     }
   ],
   "users": [
@@ -813,6 +819,73 @@
       "city": "Moscow",
       "username": "test user",
       "avatar": "https://images.unsplash.com/photo-1658591637531-46dba8f4bdf9?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 3,
+      "feedback": "sdfdsfdsf",
+      "id": "EDtSqVa"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

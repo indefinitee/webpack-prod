@@ -1,11 +1,11 @@
 .starIcon {
-  cursor: pointer;
+    cursor: pointer;
 
-  &.hovered path {
-    fill: var(--bg-color);
-  }
+    &.hovered path {
+        fill: var(--bg-color);
+    }
 }
 
 .selected {
-  cursor: auto;
+    cursor: auto;
 }
