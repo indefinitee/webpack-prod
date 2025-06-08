@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import ListIcon from '@/shared/assets/icons/bi_list.svg';
 import TileIcon from '@/shared/assets/icons/fe_tiled.svg';
 import { ArticleView } from '../../model/types/article';
