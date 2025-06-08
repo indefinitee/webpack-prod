@@ -53,7 +53,7 @@ module.exports = {
         'jsx-a11y/no-autofocus': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'danny-fsd-plugin/fsd-path-checker': 'error',
+        'danny-fsd-plugin/fsd-path-checker': ['error', { alias: '@'} ],
     },
     globals: {
         __IS_DEV__: true,
