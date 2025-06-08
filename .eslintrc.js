@@ -53,7 +53,11 @@ module.exports = {
         'jsx-a11y/no-autofocus': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'danny-fsd-plugin/fsd-path-checker': ['error', { alias: '@'} ],
+        'danny-fsd-plugin/fsd-path-checker': ['error', { alias: '@' }],
+        'danny-fsd-plugin/fsd-public-api': ['error', {
+            alias: '@',
+            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+        }],
     },
     globals: {
         __IS_DEV__: true,

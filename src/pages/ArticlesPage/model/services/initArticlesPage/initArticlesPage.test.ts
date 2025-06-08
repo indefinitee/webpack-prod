@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleSortField, ArticleType } from '@/entities/Article/model/types/article';
+import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { initArticlesPage } from './initArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
