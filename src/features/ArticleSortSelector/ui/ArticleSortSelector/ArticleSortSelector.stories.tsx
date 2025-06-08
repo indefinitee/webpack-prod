@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleSortField } from '../../model/types/article';
 import { ArticleSortSelector } from './ArticleSortSelector';
+import { ArticleSortField } from '@/entities/Article';
 
 const meta = {
     title: 'shared/ArticleSortSelector',

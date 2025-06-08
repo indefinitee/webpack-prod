@@ -12,6 +12,7 @@ export function buildBabelLoader({ isTsx, isDev }: BabelLoaderOptions) {
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
                     [
