@@ -8,55 +8,64 @@ import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { AppRoutesProps } from '@/shared/config/routerConfig/routeConfig';
-import { RoutePath } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteArticleCreate,
+    getRouteArticleDetails, getRouteArticleEdit,
+    getRouteArticles,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
 
 export const routeConfig: AppRoutesProps[] = [
     {
-        path: RoutePath.main,
+        path: getRouteMain(),
         element: <MainPage />,
     },
     {
-        path: RoutePath.about,
+        path: getRouteAbout(),
         element: <AboutPage />,
     },
     {
-        path: `${RoutePath.profile}:id`,
+        path: getRouteProfile(':id'),
         element: <ProfilePage />,
         authOnly: true,
     },
     {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true,
     },
     {
-        path: RoutePath.article_create,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     {
-        path: RoutePath.article_edit,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     {
-        path: `${RoutePath.article_details}:id`,
+        path: getRouteArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
     {
-        path: `${RoutePath.admin_panel}`,
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
     {
-        path: `${RoutePath.forbidden}`,
+        path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
     {
-        path: RoutePath.not_found,
+        path: '*',
         element: <NotFoundPage />,
     },
 ];

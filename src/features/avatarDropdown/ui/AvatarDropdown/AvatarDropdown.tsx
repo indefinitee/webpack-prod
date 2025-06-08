@@ -3,11 +3,11 @@ import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/types/router';
 import { Avatar } from '@/shared/ui/Avatar';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -36,11 +36,11 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable ? [{
                     content: t('Админка'),
-                    href: RoutePath.admin_panel,
+                    href: getRouteAdmin(),
                 }] : []),
                 {
                     content: t('Профиль'),
-                    href: RoutePath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 {
                     content: t('Выйти'),
