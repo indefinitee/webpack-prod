@@ -4,7 +4,13 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+        'plugin:import/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
