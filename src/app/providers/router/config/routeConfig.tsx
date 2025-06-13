@@ -7,7 +7,6 @@ import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { AppRoutesProps } from '@/shared/config/routerConfig/routeConfig';
 import {
     getRouteAbout,
     getRouteAdmin,
@@ -19,6 +18,7 @@ import {
     getRouteProfile,
 } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
+import { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: AppRoutesProps[] = [
     {

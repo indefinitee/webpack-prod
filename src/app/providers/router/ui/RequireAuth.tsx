@@ -6,14 +6,12 @@ import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
 interface RequireAuthProps {
     children: ReactElement,
-    redirectTo?: string
     roles?: UserRole[];
 }
 
 export function RequireAuth(props: RequireAuthProps): ReactElement {
     const {
         children,
-        redirectTo = getRouteMain(),
         roles,
     } = props;
 
@@ -35,7 +33,7 @@ export function RequireAuth(props: RequireAuthProps): ReactElement {
     if (!auth) {
         return (
             <Navigate
-                to={redirectTo}
+                to={getRouteMain()}
                 state={{ from: location }}
                 replace
             />
