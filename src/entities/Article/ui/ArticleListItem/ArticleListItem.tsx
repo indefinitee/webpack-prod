@@ -15,6 +15,8 @@ import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -54,7 +56,12 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     <Text title={article.title} className={cls.title} />
                     {types}
                     <div className={cls.imageWrapper}>
-                        <img src={article.img} className={cls.img} alt={article.title} />
+                        <AppImage
+                            fallback={<Skeleton width="100%" height={250} />}
+                            src={article.img}
+                            className={cls.img}
+                            alt={article.title}
+                        />
                     </div>
                     {textBlock && (<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />) }
                     <div className={cls.footer}>
@@ -83,7 +90,12 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
-                    <img alt={article.title} src={article.img} className={cls.img} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} />}
+                        alt={article.title}
+                        src={article.img}
+                        className={cls.img}
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>
