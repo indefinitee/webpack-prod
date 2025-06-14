@@ -36,7 +36,7 @@ type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement
 
 export interface FlexProps extends DivProps {
     className?: string;
-    children: ReactNode;
+    children?: ReactNode;
     justify?: FlexJustify;
     align?: FlexAlign;
     direction?: FlexDirection;
@@ -53,6 +53,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         gap = '4',
         max,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -68,7 +69,7 @@ export const Flex = (props: FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>
+        <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     );

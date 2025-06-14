@@ -1,13 +1,13 @@
-import { login } from './commands/login';
+import * as commonCmds from './commands/common';
+import * as profileCmds from './commands/profile';
+import * as articlesCmds from './commands/article';
+import * as commentsCmds from './commands/comments';
+import * as ratingCmds from './commands/rating';
 
-Cypress.Commands.add('login', login);
-
-declare global {
-    namespace Cypress {
-        interface Chainable {
-            login(email: string, password: string): Chainable<void>
-        }
-    }
-}
+Cypress.Commands.addAll(commonCmds);
+Cypress.Commands.addAll(profileCmds);
+Cypress.Commands.addAll(articlesCmds);
+Cypress.Commands.addAll(commentsCmds);
+Cypress.Commands.addAll(ratingCmds);
 
 export {};
