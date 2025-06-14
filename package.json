@@ -27,11 +27,6 @@
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": "npm run lint:ts-fix",
-    "*.{js,jsx,ts,tsx,scss}": "npm run lint:scss-fix",
-    "*.{js,jsx,ts,tsx}": "npm run test:unit"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
