@@ -21,11 +21,12 @@ export const userSlice = createSlice({
             const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
             if (user) {
-                state._mounted = true;
                 state.authData = JSON.parse(user);
             } else {
                 state.authData = undefined;
             }
+
+            state._mounted = true;
         },
         logout: (state) => {
             state.authData = undefined;

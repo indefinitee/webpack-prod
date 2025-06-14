@@ -18,6 +18,7 @@ export function RequireAuth(props: RequireAuthProps): ReactElement {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
     const userRoles = useSelector(getUserRoles);
+    console.log(auth);
 
     const hasRequiredRoles = useMemo(() => {
         if (!roles) {

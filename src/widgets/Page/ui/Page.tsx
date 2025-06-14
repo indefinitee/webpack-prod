@@ -28,6 +28,7 @@ export const Page = memo((props: PageProps) => {
         children,
         onScrollEnd,
     } = props;
+
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
