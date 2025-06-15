@@ -9,5 +9,3 @@ Cypress.Commands.addAll(profileCmds);
 Cypress.Commands.addAll(articlesCmds);
 Cypress.Commands.addAll(commentsCmds);
 Cypress.Commands.addAll(ratingCmds);
-
-export {};

@@ -42,3 +42,5 @@ describe('Пользователь заходит на страницу стат
         cy.get('[data-selected=true]').should('have.length', 4);
     });
 });
+
+export {};

@@ -16,3 +16,5 @@ describe('Пользователь заходит на страницу со с�
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
     });
 });
+
+export {};
