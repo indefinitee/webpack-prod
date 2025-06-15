@@ -204,7 +204,7 @@ export const Primary: Story = {
 - [Counter](/src/entities/Counter) - Счетчик
 - [Country](/src/entities/Country) - Страны
 - [Currency](/src/entities/Currency) - Валюты
-- [Notification](/src/entities/Notification) - Уведомления
+- [Notification](/src/entities/Notifications) - Уведомления
 - [Profile](/src/entities/Profile) - Профиль пользователя
 - [Rating](/src/entities/Rating) - Рейтинг
 - [User](/src/entities/User) - Пользователь
@@ -218,7 +218,7 @@ export const Primary: Story = {
 - [avatarDropdown](/src/features/avatarDropdown) - Выпадающее меню аватара
 - [editableProfileCard](/src/features/editableProfileCard) - Редактируемая карточка профиля
 - [LangSwitcher](/src/features/LangSwitcher) - Переключатель языка
-- [notificationButton](/src/features/notificationButton) - Кнопка уведомлений
+- [notificationButton](/src/features/notificationsButton) - Кнопка уведомлений
 - [profileRating](/src/features/profileRating) - Рейтинг профиля
 - [ThemeSwitcher](/src/features/ThemeSwitcher) - Переключатель темы
-- [UI](/src/features/UI) - UI-состояние приложения
+- [ScrollRestore](/src/features/ScrollRestore) - Восстановление прокрутки
